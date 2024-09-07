@@ -30,7 +30,7 @@ const router = new createBrowserRouter([
     errorElement: <Error />,
     children: [
       {
-        path: "products",
+        path: "/",
         element: <ProductPage />,
         errorElement: <ErrorElement />,
       },

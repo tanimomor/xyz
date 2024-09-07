@@ -14,7 +14,7 @@ export default function PageNames() {
                             ? "rounded-md bg-neutral-50 px-5 py-2 text-center font-semibold"
                             : "font-medium cursor-pointer"
                     }`}
-                    onClick={() => navigate("/products")}
+                    onClick={() => navigate("/")}
                 >
                     Products
                 </div>
