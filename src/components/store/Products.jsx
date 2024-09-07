@@ -77,7 +77,7 @@ export default function Products() {
                                     className="font-semibold h-[42px] w-full leading-[normal] text-[16px] text-white rounded-[5px] bg-[#202020] mt-8 flex items-center justify-center gap-x-2"
                                     onClick={() => addToCart(product)}
                                 >
-                                    <img src="src/assets/logo/products/Basket.png" alt="Basket Icon" className="mr-1" />
+                                    <img src="../../../public/assets/logo/products/Basket.png" alt="Basket Icon" className="mr-1" />
                                     <span>Add to Cart</span>
                                 </button>
                             </div>

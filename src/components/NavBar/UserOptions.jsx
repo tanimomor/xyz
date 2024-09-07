@@ -15,7 +15,7 @@ export default function UserOptions() {
             {/* Cart Icon with Notification Badge */}
             <div className="relative flex h-10 w-10 flex-shrink-0 items-center justify-center cursor-pointer" onClick={() => navigate('/cart')}>
                 <img
-                    src="src/assets/logo/products/Basket.svg"
+                    src="../../../public/assets/logo/products/Basket.svg"
                     loading="lazy"
                     className="h-8 w-8 rounded-full border border-solid border-neutral-100 object-cover object-center"
                     alt="Cart"
@@ -30,7 +30,7 @@ export default function UserOptions() {
             {/* User Image or Login Button */}
             {isLoggedIn ? (
                 <img
-                    src="src/assets/logo/default_user.png"  // Replace with the actual user profile image source
+                    src="../../../public/assets/logo/default_user.png"  // Replace with the actual user profile image source
                     loading="lazy"
                     className="h-10 w-10 rounded-full border border-solid border-neutral-100 object-cover object-center"
                     alt="User Profile"

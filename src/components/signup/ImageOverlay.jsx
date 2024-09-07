@@ -1,7 +1,7 @@
 export default function ImageOverlay(props) {
     return (
         <div className="flex h-[100vh] items-center justify-center relative">
-            <img src="src/assets/signup.png" alt="Sign Up Illustration"
+            <img src="../../../public/assets/signup.png" alt="Sign Up Illustration"
                  className="absolute inset-0 w-full h-full object-cover"/>
             <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
                 <div id="firejet-html-app">
