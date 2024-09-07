@@ -1,6 +1,6 @@
-import Logo from "../NavBar/Logo.jsx";
-import UserOptions from "../NavBar/UserOptions.jsx";
-import PageNames from "../NavBar/PageNames.jsx";
+import Logo from "../navbar/Logo.jsx";
+import UserOptions from "../navbar/UserOptions.jsx";
+import PageNames from "../navbar/PageNames.jsx";
 
 export default function Navbar() {
     return (

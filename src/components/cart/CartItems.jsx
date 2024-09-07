@@ -8,13 +8,6 @@ export default function CartItems() {
     // Calculate subtotal
     const subtotal = cart.reduce((total, product) => total + product.price * product.quantity, 0);
 
-    for(var i = 0; i < cart.length; i++) {
-        console.log('xyz', cart[i])
-    }
-
-    console.log('Cart:::', cart);
-    console.log('subtotal:::', subtotal);
-
     // Format subtotal for display
     const formattedSubtotal = subtotal.toFixed(2); // e.g., "1071.00"
 

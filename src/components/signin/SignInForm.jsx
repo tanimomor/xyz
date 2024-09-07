@@ -2,18 +2,15 @@ import { useState, useContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext.jsx";
 
-export default function BasicForm() {
-    const { authState, signUp } = useContext(AuthContext);
+export default function SignInForm() {
+    const { authState, signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
     const [formData, setFormData] = useState({
-        firstName: "",
-        lastName: "",
         email: "",
         password: "",
     });
-    const [isChecked, setIsChecked] = useState(false);
     const [errors, setErrors] = useState({});
 
     const handleInputChange = (e) => {
@@ -24,17 +21,10 @@ export default function BasicForm() {
         });
     };
 
-    const handleCheckboxChange = (e) => {
-        setIsChecked(e.target.checked);
-    };
-
     const validateForm = () => {
         const newErrors = {};
-        if (!formData.firstName) newErrors.firstName = "First name is required.";
-        if (!formData.lastName) newErrors.lastName = "Last name is required.";
         if (!formData.email) newErrors.email = "Email is required.";
         if (!formData.password) newErrors.password = "Password is required.";
-        if (!isChecked) newErrors.checkbox = "You must agree to the terms.";
 
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
@@ -43,7 +33,7 @@ export default function BasicForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (validateForm()) {
-            signUp(formData);
+            signIn(formData);
             localStorage.setItem('user', JSON.stringify(formData));
 
             // Navigate back to the previous page or /products if no previous page
@@ -54,32 +44,9 @@ export default function BasicForm() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div className="flex flex-wrap items-center justify-center gap-x-3.5 gap-y-3.5 self-stretch pt-[15px] text-xs leading-[1.28] text-neutral-500 min-[490px]:flex-nowrap">
-                <div className="flex w-56 flex-shrink-0 flex-col items-start justify-center gap-y-0.5 rounded-[5px] border border-solid border-x-[gainsboro] border-y-[gainsboro] bg-white px-2.5 pb-[5px] pt-[7px]">
-                    <div>First name (optional)</div>
-                    <input
-                        name="firstName"
-                        className="self-stretch text-sm leading-normal bg-white"
-                        placeholder="Jordan"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                    />
-                    {errors.firstName && <div className="text-red-500 text-xs">{errors.firstName}</div>}
-                </div>
-                <div className="flex w-56 flex-shrink-0 flex-col items-start justify-center gap-y-0.5 rounded-[5px] border border-solid border-x-[gainsboro] border-y-[gainsboro] bg-white px-2.5 pb-[5px] pt-[7px]">
-                    <div>Last name (optional)</div>
-                    <input
-                        name="lastName"
-                        className="self-stretch text-sm leading-normal bg-white"
-                        placeholder="Ken"
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                    />
-                    {errors.lastName && <div className="text-red-500 text-xs">{errors.lastName}</div>}
-                </div>
-            </div>
-            <div className="flex flex-col justify-end self-stretch pt-3">
-                <div className="flex flex-col justify-end gap-y-0.5 rounded-[5px] border border-solid border-x-[gainsboro] border-y-[gainsboro] bg-white px-2.5 pb-[5px] pt-2.5">
+
+            <div className="flex flex-col pt-3">
+                <div className="w-[452px] flex flex-col justify-end gap-y-0.5 rounded-[5px] border border-solid border-x-[gainsboro] border-y-[gainsboro] bg-white px-2.5 pb-[5px] pt-2.5">
                     <div className="flex h-3 flex-shrink-0 items-start">
                         <div className="flex h-full w-full flex-shrink-0 items-center overflow-clip">
                             <div className="mb-[1.5px] text-xs leading-[1.28] text-neutral-500">
@@ -89,6 +56,7 @@ export default function BasicForm() {
                     </div>
                     <input
                         name="email"
+                        type="email"
                         className="self-stretch text-sm leading-normal bg-white"
                         placeholder="jordan@email.com"
                         value={formData.email}
@@ -118,25 +86,11 @@ export default function BasicForm() {
                     </div>
                 </div>
             </div>
-            <div className="flex items-end self-stretch pt-3">
-                <div className="flex items-center justify-center gap-x-[5px]">
-                    <input
-                        type="checkbox"
-                        className="h-[11px] w-[11px] flex-shrink-0 rounded-sm border border-solid border-x-black border-y-black bg-white"
-                        checked={isChecked}
-                        onChange={handleCheckboxChange}
-                    />
-                    <div className="text-sm font-medium leading-[normal]">
-                        <span>I agree to the <span className="underline">Terms &amp; Policy</span></span>
-                    </div>
-                </div>
-                {errors.checkbox && <div className="text-red-500 text-xs">{errors.checkbox}</div>}
-            </div>
 
             <div className="flex flex-col justify-end self-stretch pt-[18px]">
                 <button type="submit" className="flex items-center justify-center rounded-md bg-black p-5">
                     <div className="text-center text-[17px] font-semibold capitalize leading-none text-white">
-                        Signup
+                        Sign In
                     </div>
                 </button>
             </div>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import BasicForm from "../components/signup/BasicForm.jsx";
 import SigninWithSocialMediaButton from "../components/signup/SigninWithSocialMediaButton.jsx";
 import WelcomeMessage from "../components/signin/WelcomeMessage.jsx";
@@ -31,8 +32,8 @@ export default function SignIn() {
                             </div>
                             <div className="flex items-end justify-center self-stretch pt-[18px]">
                                 <div className="text-center text-sm font-medium leading-[normal]">
-                                    <span>Have an account? <span className="text-center text-indigo-700">
-                                        <a href="#">Sign In</a> </span></span>
+                                    <span>Do not have an account? <span className="text-center text-indigo-700">
+                                        <Link to="/register">Sign Up</Link></span></span>
                                 </div>
                             </div>
                         </div>
@@ -43,7 +44,6 @@ export default function SignIn() {
             <div className="w-[50vw]">
                 <ImageOverlay />
             </div>
-
         </div>
     );
 }

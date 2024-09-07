@@ -2,6 +2,7 @@ import BasicForm from "../components/signup/BasicForm.jsx";
 import SigninWithSocialMediaButton from "../components/signup/SigninWithSocialMediaButton.jsx";
 import WelcomeMessage from "../components/signup/WelcomeMessage.jsx";
 import ImageOverlay from "../components/signup/ImageOverlay.jsx";
+import {Link} from "react-router-dom";
 
 export default function SignUp() {
     return (
@@ -30,8 +31,8 @@ export default function SignUp() {
                             </div>
                             <div className="flex items-end justify-center self-stretch pt-[18px]">
                                 <div className="text-center text-sm font-medium leading-[normal]">
-                                    <span>Have an account? <span className="text-center text-indigo-700">
-                                        <a href="#">Sign In</a> </span></span>
+                                    <span>Already have an account? <span className="text-center text-indigo-700">
+                                        <Link to="/login">Sign In</Link> </span></span>
                                 </div>
                             </div>
                         </div>
