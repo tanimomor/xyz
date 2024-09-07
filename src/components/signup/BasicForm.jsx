@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import {useState, useContext, useEffect} from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext.jsx";
 
@@ -15,6 +15,7 @@ export default function BasicForm() {
     });
     const [isChecked, setIsChecked] = useState(false);
     const [errors, setErrors] = useState({});
+    const [authError, setAuthError] = useState(""); // To handle authentication errors
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -40,18 +41,29 @@ export default function BasicForm() {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (validateForm()) {
-            signUp(formData);
-            localStorage.setItem('user', JSON.stringify(formData));
+            setAuthError(""); // Reset authentication error
 
-            // Navigate back to the previous page or /products if no previous page
-            const previousPage = location.state?.from || "/products";
-            navigate(previousPage);
+            try {
+                await signUp(formData);  // Await signUp function
+
+                // If authentication succeeds, navigate to the previous page or /products
+
+            } catch (error) {
+                // Handle any errors that occur during sign up
+                setAuthError(error.message || "Sign up failed. Please try again. 2");
+            }
         }
     };
 
+    useEffect(() => {
+        if (authState.isAuthenticated) {
+            const previousPage = location.state?.from || "/products";
+            navigate(previousPage);
+        }
+    })
     return (
         <form onSubmit={handleSubmit}>
             <div className="flex flex-wrap items-center justify-center gap-x-3.5 gap-y-3.5 self-stretch pt-[15px] text-xs leading-[1.28] text-neutral-500 min-[490px]:flex-nowrap">
@@ -132,6 +144,8 @@ export default function BasicForm() {
                 </div>
                 {errors.checkbox && <div className="text-red-500 text-xs">{errors.checkbox}</div>}
             </div>
+
+            {authError && <div className="text-red-500 text-xs pt-2">{authError}</div>} {/* Display auth error */}
 
             <div className="flex flex-col justify-end self-stretch pt-[18px]">
                 <button type="submit" className="flex items-center justify-center rounded-md bg-black p-5">

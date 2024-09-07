@@ -4,53 +4,133 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [authState, setAuthState] = useState(() => {
-        const user = localStorage.getItem('user');
-        return user ? { isAuthenticated: true, user: JSON.parse(user) } : { isAuthenticated: false, user: null };
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+        if (loggedInUser) {
+            const user = users.find(user => user.email === loggedInUser.email && !user.deactivated);
+            if (user) {
+                return {
+                    isAuthenticated: true,
+                    user,
+                    cart: user.cart || []
+                };
+            }
+        }
+
+        return {
+            isAuthenticated: false,
+            user: null,
+            cart: []
+        };
     });
 
     const signUp = (userData) => {
-        setAuthState({
-            isAuthenticated: true,
-            user: userData,
+        return new Promise((resolve, reject) => {
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const existingUser = users.find(user => user.email === userData.email);
+
+            if (!existingUser) {
+                const newUser = {
+                    ...userData,
+                    cart: [],
+                    deactivated: false
+                };
+                users.push(newUser);
+                localStorage.setItem('users', JSON.stringify(users));
+
+                // Update authState and resolve the promise afterwards
+                setAuthState({
+                    isAuthenticated: true,
+                    user: newUser,
+                    cart: []
+                });
+
+                // Persist the authenticated user to localStorage
+                localStorage.setItem('loggedInUser', JSON.stringify(newUser));
+
+                // Resolve the promise after the state has been set
+                resolve();
+            } else {
+                // Reject the promise if the user already exists
+                reject(new Error('User already exists'));
+            }
         });
     };
 
-    const signIn = (credentials) => {
-        // Mock authentication process
-        const mockUser = { email: credentials.email, name: "John Doe" }; // Mock user data
 
-        // Here, you should replace this with actual authentication logic
-        if (credentials.email === "test@example.com" && credentials.password === "password") {
+    const signIn = (credentials) => {
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        console.log(['credentials', credentials]);
+        const user = users.find(u => u.email === credentials.email && u.password === credentials.password);
+        console.log('users', users);
+        console.log("User found: ", user)
+        if (user) {
             setAuthState({
                 isAuthenticated: true,
-                user: mockUser,
+                user,
+                cart: user.cart || []
             });
+
+            localStorage.setItem('loggedInUser', JSON.stringify(user));
         } else {
-            console.log('Invalid credentials'); // Handle invalid credentials
+            console.log('Invalid credentials or user deactivated');
         }
     };
 
+    useEffect(() => {
+        console.log('Authenticated user', authState.isAuthenticated);
+    }, [authState]);
+
     const logout = () => {
-        // Clear user data from state
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const updatedUsers = users.map(user =>
+            user.email === authState.user.email
+                ? { ...user, deactivated: true }
+                : user
+        );
+        localStorage.setItem('users', JSON.stringify(updatedUsers));
+
         setAuthState({
             isAuthenticated: false,
             user: null,
+            cart: []
         });
-        // Clear user data from localStorage
-        localStorage.removeItem('user');
+        localStorage.removeItem('loggedInUser');
+    };
+
+    const addToCart = (product) => {
+        if (authState.isAuthenticated) {
+            const updatedCart = [...authState.cart, product];
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const updatedUsers = users.map(user =>
+                user.email === authState.user.email
+                    ? { ...user, cart: updatedCart }
+                    : user
+            );
+            localStorage.setItem('users', JSON.stringify(updatedUsers));
+
+            setAuthState({
+                ...authState,
+                cart: updatedCart
+            });
+        }
     };
 
     useEffect(() => {
         if (authState.isAuthenticated) {
-            localStorage.setItem('user', JSON.stringify(authState.user));
-        } else {
-            localStorage.removeItem('user');
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const updatedUsers = users.map(user =>
+                user.email === authState.user.email
+                    ? { ...user, cart: authState.cart }
+                    : user
+            );
+            localStorage.setItem('users', JSON.stringify(updatedUsers));
         }
-        console.log('auth state', authState);
     }, [authState]);
 
     return (
-        <AuthContext.Provider value={{ authState, signUp, signIn, logout }}>
+        <AuthContext.Provider value={{ authState, signUp, signIn, logout, addToCart }}>
             {children}
         </AuthContext.Provider>
     );

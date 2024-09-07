@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext.jsx";
 
@@ -12,6 +12,7 @@ export default function SignInForm() {
         password: "",
     });
     const [errors, setErrors] = useState({});
+    const [authError, setAuthError] = useState(""); // To handle authentication errors
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -30,21 +31,36 @@ export default function SignInForm() {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (validateForm()) {
-            signIn(formData);
-            localStorage.setItem('user', JSON.stringify(formData));
+            setAuthError(""); // Reset authentication error
 
+            try {
+                const success = await signIn(formData);
+
+                if (!success) {
+                    // Handle failed authentication
+                    setAuthError("Invalid email or password.");
+                }
+            } catch (error) {
+                // Optionally handle any unexpected errors that might occur during sign-in
+                setAuthError("An unexpected error occurred. Please try again.");
+            }
+        }
+    };
+
+
+    useEffect(() => {
+        if (authState.isAuthenticated) {
             // Navigate back to the previous page or /products if no previous page
             const previousPage = location.state?.from || "/products";
             navigate(previousPage);
         }
-    };
+    }, [authState]);
 
     return (
         <form onSubmit={handleSubmit}>
-
             <div className="flex flex-col pt-3">
                 <div className="w-[452px] flex flex-col justify-end gap-y-0.5 rounded-[5px] border border-solid border-x-[gainsboro] border-y-[gainsboro] bg-white px-2.5 pb-[5px] pt-2.5">
                     <div className="flex h-3 flex-shrink-0 items-start">
@@ -86,6 +102,8 @@ export default function SignInForm() {
                     </div>
                 </div>
             </div>
+
+            {authError && <div className="text-red-500 text-xs pt-2">{authError}</div>} {/* Display auth error */}
 
             <div className="flex flex-col justify-end self-stretch pt-[18px]">
                 <button type="submit" className="flex items-center justify-center rounded-md bg-black p-5">

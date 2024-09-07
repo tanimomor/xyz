@@ -20,7 +20,16 @@ export default function UserOptions() {
     // Handle logout
     const handleLogout = () => {
         logout();  // Call logout function from AuthContext
-        navigate('/');  // Redirect to login page
+        navigate('/');  // Redirect to the homepage after logout
+    };
+
+    // Handle cart icon click
+    const handleCartClick = () => {
+        if (isLoggedIn) {
+            navigate('/cart');  // Navigate to the cart page if the user is logged in
+        } else {
+            navigate('/login', { state: { from: location.pathname } });  // Redirect to login and pass the intended destination
+        }
     };
 
     return (
@@ -28,7 +37,7 @@ export default function UserOptions() {
             {/* Cart Icon with Notification Badge */}
             <div
                 className={`relative flex h-10 w-10 flex-shrink-0 items-center justify-center cursor-pointer ${isCartPage ? 'rounded-md bg-gray-100 text-center font-semibold' : ''}`}
-                onClick={() => navigate('/cart')}
+                onClick={handleCartClick}
             >
                 <img
                     src="/assets/logo/products/Basket.svg"
