@@ -1,0 +1,435 @@
+
+[
+  {
+    "id": 1,
+    "name": "Recliner Chair Wood",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "It has a backrest that can be tilted back, and often a footrest extended.",
+    "image": "src/assets/products/image_125.png"
+  },
+  {
+    "id": 2,
+    "name": "Blank Bamboo Wicker",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "Lightweight, easy to clean, sturdy, safe and stable. Non-slip legs.",
+    "image": "src/assets/products/rocking-chair-with-padded-seat 1.png"
+  },
+  {
+    "id": 3,
+    "name": "Timber Ride Padded",
+    "price": "59.00",
+    "originalPrice": "75.00",
+    "discount": "30% OFF",
+    "description": "High Back Rocking Side Pocket Portable Folding Outdoor Camping Chairs.",
+    "image": "src/assets/products/image 146.png"
+  },
+  {
+    "id": 4,
+    "name": "Isolated Wooden Rock",
+    "price": "165.00",
+    "originalPrice": "400.00",
+    "discount": "30% OFF",
+    "description": "It has a backrest that can be tilted back, and often a footrest extended.",
+    "image": "src/assets/products/image 147.png"
+  },
+  {
+    "id": 5,
+    "name": "Colored Wooden Chair",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "It has a backrest that can be tilted back, and often a footrest extended.",
+    "image": "src/assets/products/image 148.png"
+  },
+  {
+    "id": 6,
+    "name": "Minimal Empty Rocking",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "A seat, especially for one person, usually having four legs for support.",
+    "image": "src/assets/products/image 149.png"
+  },
+  {
+    "id": 7,
+    "name": "Urban Recliner Lounge",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "A stylish recliner with a plush backrest and integrated footrest, perfect for modern living spaces.",
+    "image": "src/assets/products/image 146.png"
+  },
+  {
+    "id": 8,
+    "name": "Eco-Friendly Bamboo Rocker",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "Sustainable and chic, this bamboo rocking chair offers both comfort and eco-conscious design.",
+    "image": "src/assets/products/image_125.png"
+  },
+  {
+    "id": 9,
+    "name": "Compact Camping Chair",
+    "price": "59.00",
+    "originalPrice": "75.00",
+    "discount": "30% OFF",
+    "description": "A lightweight and portable chair ideal for camping trips, with a high back for extra comfort.",
+    "image": "src/assets/products/image 148.png"
+  },
+  {
+    "id": 10,
+    "name": "Rustic Wooden Rocker",
+    "price": "165.00",
+    "originalPrice": "400.00",
+    "discount": "30% OFF",
+    "description": "A timeless wooden rocking chair that adds a touch of rustic charm to any room.",
+    "image": "src/assets/products/image 149.png"
+  },
+  {
+    "id": 11,
+    "name": "Colorful Accent Chair",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "Brighten up your space with this vibrant accent chair featuring a comfortable design and bold colors.",
+    "image": "src/assets/products/image 147.png"
+  },
+  {
+    "id": 12,
+    "name": "Minimalist Rocking Seat",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "A sleek and minimalist rocking chair that seamlessly fits into any contemporary decor.",
+    "image": "src/assets/products/rocking-chair-with-padded-seat 1.png"
+  },
+  {
+    "id": 13,
+    "name": "Urban Recliner Lounge",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "A stylish recliner with a plush backrest and integrated footrest, perfect for modern living spaces.",
+    "image": "src/assets/products/image 149.png"
+  },
+  {
+    "id": 14,
+    "name": "Eco-Friendly Bamboo Rocker",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "Sustainable and chic, this bamboo rocking chair offers both comfort and eco-conscious design.",
+    "image": "src/assets/products/image 148.png"
+  },
+  {
+    "id": 15,
+    "name": "Compact Camping Chair",
+    "price": "59.00",
+    "originalPrice": "75.00",
+    "discount": "30% OFF",
+    "description": "A lightweight and portable chair ideal for camping trips, with a high back for extra comfort.",
+    "image": "src/assets/products/image_125.png"
+  },
+  {
+    "id": 16,
+    "name": "Rustic Wooden Rocker",
+    "price": "165.00",
+    "originalPrice": "400.00",
+    "discount": "30% OFF",
+    "description": "A timeless wooden rocking chair that adds a touch of rustic charm to any room.",
+    "image": "src/assets/products/image 146.png"
+  },
+  {
+    "id": 17,
+    "name": "Colorful Accent Chair",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "Brighten up your space with this vibrant accent chair featuring a comfortable design and bold colors.",
+    "image": "src/assets/products/image 147.png"
+  },
+  {
+    "id": 18,
+    "name": "Minimalist Rocking Seat",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "A sleek and minimalist rocking chair that seamlessly fits into any contemporary decor.",
+    "image": "src/assets/products/image 149.png"
+  },
+  {
+    "id": 19,
+    "name": "Urban Recliner Lounge",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "A stylish recliner with a plush backrest and integrated footrest, perfect for modern living spaces.",
+    "image": "src/assets/products/rocking-chair-with-padded-seat 1.png"
+  },
+  {
+    "id": 20,
+    "name": "Eco-Friendly Bamboo Rocker",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "Sustainable and chic, this bamboo rocking chair offers both comfort and eco-conscious design.",
+    "image": "src/assets/products/image_125.png"
+  },
+  {
+    "id": 21,
+    "name": "Compact Camping Chair",
+    "price": "59.00",
+    "originalPrice": "75.00",
+    "discount": "30% OFF",
+    "description": "A lightweight and portable chair ideal for camping trips, with a high back for extra comfort.",
+    "image": "src/assets/products/image 146.png"
+  },
+  {
+    "id": 22,
+    "name": "Rustic Wooden Rocker",
+    "price": "165.00",
+    "originalPrice": "400.00",
+    "discount": "30% OFF",
+    "description": "A timeless wooden rocking chair that adds a touch of rustic charm to any room.",
+    "image": "src/assets/products/image 148.png"
+  },
+  {
+    "id": 23,
+    "name": "Colorful Accent Chair",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "Brighten up your space with this vibrant accent chair featuring a comfortable design and bold colors.",
+    "image": "src/assets/products/image 147.png"
+  },
+  {
+    "id": 24,
+    "name": "Minimalist Rocking Seat",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "A sleek and minimalist rocking chair that seamlessly fits into any contemporary decor.",
+    "image": "src/assets/products/image_125.png"
+  },
+  {
+    "id": 25,
+    "name": "Urban Recliner Lounge",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "A stylish recliner with a plush backrest and integrated footrest, perfect for modern living spaces.",
+    "image": "src/assets/products/image 149.png"
+  },
+  {
+    "id": 26,
+    "name": "Eco-Friendly Bamboo Rocker",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "Sustainable and chic, this bamboo rocking chair offers both comfort and eco-conscious design.",
+    "image": "src/assets/products/image 146.png"
+  },
+  {
+    "id": 27,
+    "name": "Compact Camping Chair",
+    "price": "59.00",
+    "originalPrice": "75.00",
+    "discount": "30% OFF",
+    "description": "A lightweight and portable chair ideal for camping trips, with a high back for extra comfort.",
+    "image": "src/assets/products/image_125.png"
+  },
+  {
+    "id": 28,
+    "name": "Rustic Wooden Rocker",
+    "price": "165.00",
+    "originalPrice": "400.00",
+    "discount": "30% OFF",
+    "description": "A timeless wooden rocking chair that adds a touch of rustic charm to any room.",
+    "image": "src/assets/products/rocking-chair-with-padded-seat 1.png"
+  },
+  {
+    "id": 29,
+    "name": "Colorful Accent Chair",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "Brighten up your space with this vibrant accent chair featuring a comfortable design and bold colors.",
+    "image": "src/assets/products/image 147.png"
+  },
+  {
+    "id": 30,
+    "name": "Minimalist Rocking Seat",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "A sleek and minimalist rocking chair that seamlessly fits into any contemporary decor.",
+    "image": "src/assets/products/image 149.png"
+  },
+  {
+    "id": 31,
+    "name": "Urban Recliner Lounge",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "A stylish recliner with a plush backrest and integrated footrest, perfect for modern living spaces.",
+    "image": "src/assets/products/image_125.png"
+  },
+  {
+    "id": 32,
+    "name": "Eco-Friendly Bamboo Rocker",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "Sustainable and chic, this bamboo rocking chair offers both comfort and eco-conscious design.",
+    "image": "src/assets/products/image 146.png"
+  },
+  {
+    "id": 33,
+    "name": "Compact Camping Chair",
+    "price": "59.00",
+    "originalPrice": "75.00",
+    "discount": "30% OFF",
+    "description": "A lightweight and portable chair ideal for camping trips, with a high back for extra comfort.",
+    "image": "src/assets/products/image 149.png"
+  },
+  {
+    "id": 34,
+    "name": "Rustic Wooden Rocker",
+    "price": "165.00",
+    "originalPrice": "400.00",
+    "discount": "30% OFF",
+    "description": "A timeless wooden rocking chair that adds a touch of rustic charm to any room.",
+    "image": "src/assets/products/image_125.png"
+  },
+  {
+    "id": 35,
+    "name": "Colorful Accent Chair",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "Brighten up your space with this vibrant accent chair featuring a comfortable design and bold colors.",
+    "image": "src/assets/products/rocking-chair-with-padded-seat 1.png"
+  },
+  {
+    "id": 36,
+    "name": "Minimalist Rocking Seat",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "A sleek and minimalist rocking chair that seamlessly fits into any contemporary decor.",
+    "image": "src/assets/products/image 147.png"
+  },
+  {
+    "id": 37,
+    "name": "Urban Recliner Lounge",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "A stylish recliner with a plush backrest and integrated footrest, perfect for modern living spaces.",
+    "image": "src/assets/products/image 149.png"
+  },
+  {
+    "id": 38,
+    "name": "Eco-Friendly Bamboo Rocker",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "Sustainable and chic, this bamboo rocking chair offers both comfort and eco-conscious design.",
+    "image": "src/assets/products/image_125.png"
+  },
+  {
+    "id": 39,
+    "name": "Compact Camping Chair",
+    "price": "59.00",
+    "originalPrice": "75.00",
+    "discount": "30% OFF",
+    "description": "A lightweight and portable chair ideal for camping trips, with a high back for extra comfort.",
+    "image": "src/assets/products/image 146.png"
+  },
+  {
+    "id": 40,
+    "name": "Rustic Wooden Rocker",
+    "price": "165.00",
+    "originalPrice": "400.00",
+    "discount": "30% OFF",
+    "description": "A timeless wooden rocking chair that adds a touch of rustic charm to any room.",
+    "image": "src/assets/products/image 147.png"
+  },
+  {
+    "id": 41,
+    "name": "Colorful Accent Chair",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "Brighten up your space with this vibrant accent chair featuring a comfortable design and bold colors.",
+    "image": "src/assets/products/image_125.png"
+  },
+  {
+    "id": 42,
+    "name": "Minimalist Rocking Seat",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "A sleek and minimalist rocking chair that seamlessly fits into any contemporary decor.",
+    "image": "src/assets/products/rocking-chair-with-padded-seat 1.png"
+  },
+  {
+    "id": 43,
+    "name": "Urban Recliner Lounge",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "A stylish recliner with a plush backrest and integrated footrest, perfect for modern living spaces.",
+    "image": "src/assets/products/image 146.png"
+  },
+  {
+    "id": 44,
+    "name": "Eco-Friendly Bamboo Rocker",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "Sustainable and chic, this bamboo rocking chair offers both comfort and eco-conscious design.",
+    "image": "src/assets/products/image 149.png"
+  },
+  {
+    "id": 45,
+    "name": "Compact Camping Chair",
+    "price": "59.00",
+    "originalPrice": "75.00",
+    "discount": "30% OFF",
+    "description": "A lightweight and portable chair ideal for camping trips, with a high back for extra comfort.",
+    "image": "src/assets/products/image 148.png"
+  },
+  {
+    "id": 46,
+    "name": "Rustic Wooden Rocker",
+    "price": "165.00",
+    "originalPrice": "400.00",
+    "discount": "30% OFF",
+    "description": "A timeless wooden rocking chair that adds a touch of rustic charm to any room.",
+    "image": "src/assets/products/image 147.png"
+  },
+  {
+    "id": 47,
+    "name": "Colorful Accent Chair",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "Brighten up your space with this vibrant accent chair featuring a comfortable design and bold colors.",
+    "image": "src/assets/products/image 146.png"
+  },
+  {
+    "id": 48,
+    "name": "Minimalist Rocking Seat",
+    "price": "299.00",
+    "originalPrice": "350.00",
+    "discount": "30% OFF",
+    "description": "A sleek and minimalist rocking chair that seamlessly fits into any contemporary decor.",
+    "image": "src/assets/products/image 125.png"
+  }
+]
