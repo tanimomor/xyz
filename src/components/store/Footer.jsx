@@ -43,15 +43,15 @@ export default function Footer() {
                         <div className="flex items-center">
                             <div className="flex items-start gap-x-2 w-52">
                                 <a href="#">
-                                    <object data="../../../public/assets/logo/socialmedia/facebook.png"
+                                    <object data="/assets/logo/socialmedia/facebook.png"
                                             className="h-5 w-5 flex-shrink-0"></object>
                                 </a>
                                 <a href="#">
-                                    <object data="../../../public/assets/logo/socialmedia/instagram.png"
+                                    <object data="/assets/logo/socialmedia/instagram.png"
                                             className="h-5 w-5 flex-shrink-0"></object>
                                 </a>
                                 <a href="#">
-                                    <object data="../../../public/assets/logo/socialmedia/new-twitter.png"
+                                    <object data="/assets/logo/socialmedia/new-twitter.png"
                                             className="h-5 w-5 flex-shrink-0"></object>
                                 </a>
                                 {/*<a href="#"><object data="src/assets/logo/socialmedia/linkedin-02.png" className="h-5 w-5 flex-shrink-0"></object></a>*/}
